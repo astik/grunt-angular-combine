@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 
 			grunt.file.recurse(currentFolderPath, function(abspath, rootdir, subdir, filename) {
 				// only work with HTML files
-				if (filename.indexOf(".html") > 0) {
+				if (/\.html$/.test(filename)) {
 					grunt.log.writeln("file =", filename);
 					destFileContent += "<script type='text/ng-template' id='" + folderRelativePath + "/" + filename + "'>\n";
 					destFileContent += grunt.file.read(currentFolderPath + "/" + filename);
