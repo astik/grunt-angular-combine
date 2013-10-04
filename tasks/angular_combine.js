@@ -27,14 +27,16 @@ module.exports = function (grunt) {
 			destFileContent += "<!-- Merge of " + currentFolderPath + " -->/\n";
 
 			grunt.file.recurse(currentFolderPath, function(abspath, rootdir, subdir, filename) {
-				grunt.log.writeln("file =", filename);
-				destFileContent += "<script type='text/ng-template' id='" + folderRelativePath + "/" + filename + "'>\n";
-				destFileContent += grunt.file.read(currentFolderPath + "/" + filename);
-				destFileContent += "</script>\n";
+				// only work with HTML files
+				if (filename.indexOf(".html") > 0) {
+					grunt.log.writeln("file =", filename);
+					destFileContent += "<script type='text/ng-template' id='" + folderRelativePath + "/" + filename + "'>\n";
+					destFileContent += grunt.file.read(currentFolderPath + "/" + filename);
+					destFileContent += "</script>\n";
+				}
 			});
 
 			grunt.file.write(destFilePath, destFileContent);
 		});
 	});
-
 };
