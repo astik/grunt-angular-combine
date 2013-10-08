@@ -75,6 +75,8 @@ By defaults, it works in the current base directory.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.1.0 : initial version
-0.1.1 : fix other-than-html file management
-0.1.2 : fix only html files (filename ending with .html) should be processed
+
+- 0.1.0 : initial version
+- 0.1.1 : fix other-than-html file management
+- 0.1.2 : fix only html files (filename ending with .html) should be processed
+- 0.1.3 : manage nested folder
