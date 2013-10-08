@@ -17,14 +17,14 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-angular-combine');
 ```
 
-## The "angular_combine" task
+## The "angularCombine" task
 
 ### Overview
-In your project's Gruntfile, add a section named `angular_combine` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `angularCombine` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  angular_combine: {
+  angularCombine: {
     combine: {
       options : {
         appBaseDir : "app",
@@ -57,7 +57,7 @@ In this example, all HTML files located into app/directives will be merged into 
 
 ```js
 grunt.initConfig({
-  angular_combine: {
+  angularCombine: {
     combine: {
       options : {
         appBaseDir : "app",

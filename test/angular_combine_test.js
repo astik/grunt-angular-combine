@@ -22,7 +22,7 @@ var grunt = require('grunt');
 		test.ifError(value)
 */
 
-exports.angular_combine = {
+exports.angularCombine = {
 	setUp : function (done) {
 		// setup here if necessary
 		done();

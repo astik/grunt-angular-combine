@@ -9,7 +9,7 @@
 'use strict';
 
 module.exports = function (grunt) {
-	grunt.registerMultiTask('angular_combine', 'Combine AngularJS partials into a single HTML file.', function () {
+	grunt.registerMultiTask('angularCombine', 'Combine AngularJS partials into a single HTML file.', function () {
 		var options = this.options({
 			appBaseDir : '',
 			targetDir : ''
