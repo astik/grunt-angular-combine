@@ -80,3 +80,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 - 0.1.1 : fix other-than-html file management
 - 0.1.2 : fix only html files (filename ending with .html) should be processed
 - 0.1.3 : manage nested folder
+- 0.1.4 : change plugin name to stick with camel case convention
+
