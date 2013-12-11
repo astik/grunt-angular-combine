@@ -15,13 +15,13 @@ module.exports = function(grunt) {
 		jshint : {
 			all : [ 'Gruntfile.js', 'tasks/*.js', '<%= nodeunit.tests %>' ],
 			options : {
-				jshintrc : '.jshintrc',
-			},
+				jshintrc : '.jshintrc'
+			}
 		},
 
 		// Before generating any new files, remove any previously-created files.
 		clean : {
-			tests : [ 'tmp' ],
+			tests : [ 'tmp' ]
 		},
 
 		// Configuration to be run (and then tested).
@@ -34,12 +34,12 @@ module.exports = function(grunt) {
 					dest : 'tmp/combined',
 					filter : 'isDirectory'
 				} ]
-			},
+			}
 		},
 
 		// Unit tests.
 		nodeunit : {
-			tests : [ 'test/*_test.js' ],
+			tests : [ 'test/*_test.js' ]
 		},
 
 	});
