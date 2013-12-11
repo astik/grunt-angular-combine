@@ -8,7 +8,7 @@
 
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
@@ -27,11 +27,13 @@ module.exports = function (grunt) {
 		// Configuration to be run (and then tested).
 		angularCombine : {
 			combine : {
-				options : {
-					appBaseDir : "test/fixtures",
-					targetDir : "tmp/combined"
-				},
-				folders : [ 'test1', 'test2', 'test3' ]
+				files : [ {
+					expand : true,
+					cwd : 'test/fixtures',
+					src : '*',
+					dest : 'tmp/combined',
+					filter : 'isDirectory'
+				} ]
 			},
 		},
 
