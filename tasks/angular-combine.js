@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('angularCombine', 'Combine AngularJS partials into a single HTML file.', function () {
 		var managePartialsDirectory = function(cwd, source, dest){
 			var destFileContent = "";
-			destFileContent += "<!-- Merge of " + source + " -->/\n";
+			destFileContent += "<!-- Merge of " + source + " -->\n";
 
 			grunt.file.recurse(source, function (abspath, rootdir, subdir, filename) {
 				// only work with HTML files
