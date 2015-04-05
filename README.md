@@ -1,5 +1,7 @@
 # grunt-angular-combine
 
+[![Build Status: Linux](https://travis-ci.org/astik/grunt-angular-combine.svg?branch=master)](https://travis-ci.org/astik/grunt-angular-combine)
+
 > Combine AngularJS partials into a single HTML file.
 
 ## Getting Started
