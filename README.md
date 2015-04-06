@@ -4,6 +4,10 @@
 
 > Combine AngularJS partials into a single HTML file.
 
+This plugin is helpful for better performance in AngularJS template loading.
+You can use it to prepare templates for [angular-combine](https://github.com/astik/angular-combine). 
+  
+
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
 
@@ -19,6 +23,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-angular-combine');
 ```
 
+
 ## The "angularCombine" task
 
 ### Overview
@@ -28,11 +33,13 @@ In your project's Gruntfile, add a section named `angularCombine` to the data ob
 grunt.initConfig({
   angularCombine: {
     combine: {
-      options : {
-        appBaseDir : "app",
-        targetDir : "target"
-      },
-      folders : [ 'directives' ]
+      files : [ {
+        expand : true,
+        cwd : 'app/modules',
+        src : '*',
+        dest : 'tmp/combined',
+        filter : 'isDirectory'
+      } ]
     },
   },
 })
@@ -44,8 +51,6 @@ No option.
 Just define which folder should be processed.
 
 ### Usage Examples
-
-#### Options
 
 Imagine a file structure like this :
 
@@ -88,8 +93,11 @@ You will get :
 
 By defaults, it works in the current base directory.
 
+
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+You'll find all contributors on this [contributors page](https://github.com/astik/grunt-angular-combine/graphs/contributors)
+
 
 ## Release History
 
