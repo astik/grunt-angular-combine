@@ -1,3 +1,11 @@
+v0.1.7:
+  date: 2014-04-06
+  changes:
+    - fix file picker allowing to be more precise in choosing what file to merge
+    - processIdentifierFunc option to define your fragment id strategy (thanks to @taylorcode)
+    - includeComments option to remove comment generation (thanks to @andykim88)
+    - fix documentation that was still pre-0.1.5 example
+
 v0.1.6:
   date: 2014-01-24
   changes:

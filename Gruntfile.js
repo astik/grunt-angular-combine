@@ -84,6 +84,11 @@ module.exports = function(grunt) {
 			tests : [ 'test/*_test.js' ]
 		},
 
+		release : {
+			options : {
+				tagName : 'v<%= version %>'
+			}
+		}
 	});
 
 	// Actually load this plugin's task(s).
@@ -93,6 +98,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
+	grunt.loadNpmTasks('grunt-release');
 
 	// Whenever the "test" task is run, first clean the "tmp" dir, then run this
 	// plugin's task(s), then test the result.

@@ -194,3 +194,7 @@ You'll find all contributors on this [contributors page](https://github.com/asti
 ## Release History
 
 See the changelog =)
+
+### Release process
+
+The project use [grunt-release](https://github.com/geddski/grunt-release) for its versionning an tag process.
