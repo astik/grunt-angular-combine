@@ -41,14 +41,61 @@ grunt.initConfig({
         filter : 'isDirectory'
       } ]
     },
-  },
+  }
 })
 ```
 
 ### Options
 
-No option.
-Just define which folder should be processed.
+The default process doesn't need any option but which folder should be processed.
+
+#### processIdentifier
+
+```js
+grunt.initConfig({
+  angularCombine : {
+    combine : {
+      options : {
+        processIdentifier : function(id) {
+          // just use the files name without extension as identifier
+          return id.split('/').pop().replace('.html', '');
+        }
+      },
+      files : [ {
+        expand : true,
+        cwd : 'app/modules',
+        src : '*',
+        dest : 'tmp/combined',
+        filter : 'isDirectory'
+      } ]
+    }
+  }
+})
+```
+
+With the *processIdentifier* options, you can define the fragment id strategy.
+By default, with the following files structures :
+
+```
+* app/modules
+  * module1/
+    * module1-template1.html
+    * module1-template2.html
+    * module1-template3.html
+```
+
+you'll get those fragment id :
+
+- module1/module1-template1.html
+- module1/module1-template2.html
+- module1/module1-template3.html
+
+With the function defined into options (like the example above, you'll get :
+
+- module1-template1
+- module1-template2
+- module1-template3
+
 
 ### Usage Examples
 

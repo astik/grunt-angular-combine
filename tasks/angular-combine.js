@@ -8,16 +8,29 @@
 
 'use strict';
 
-module.exports = function (grunt) {
-	grunt.registerMultiTask('angularCombine', 'Combine AngularJS partials into a single HTML file.', function () {
-		var managePartialsDirectory = function(cwd, source, dest){
+module.exports = function(grunt) {
+	grunt.registerMultiTask('angularCombine', 'Combine AngularJS partials into a single HTML file.', function() {
+
+		// define processIdentifierFunc
+		var processIdentifierFunc = function(id) {
+			return id;
+		};
+		if (this.data.options) {
+			processIdentifierFunc = this.data.options.processIdentifier;
+			if (processIdentifierFunc && typeof (processIdentifierFunc) !== 'function') {
+				throw new Error('angularCombine: processIdentifier must be a function.');
+			}
+		}
+
+		var managePartialsDirectory = function(cwd, source, dest, a, b) {
 			var destFileContent = "";
 			destFileContent += "<!-- Merge of " + source + " -->\n";
 
-			grunt.file.recurse(source, function (abspath, rootdir, subdir, filename) {
+			grunt.file.recurse(source, function(abspath, rootdir, subdir, filename) {
 				// only work with HTML files
 				if (/\.html$/.test(filename) && abspath.indexOf('/.') === -1) {
 					var id = abspath.substring(cwd.length + 1);
+					id = processIdentifierFunc(id);
 					destFileContent += "<script type='text/ng-template' id='" + id + "'>\n";
 					destFileContent += grunt.file.read(abspath);
 					destFileContent += "</script>\n";

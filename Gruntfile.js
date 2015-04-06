@@ -30,7 +30,22 @@ module.exports = function(grunt) {
 				files : [ {
 					expand : true,
 					cwd : 'test/fixtures',
-					src : '*',
+					src : 'test*',
+					dest : 'tmp/combined',
+					filter : 'isDirectory'
+				} ]
+			},
+			combineWithChangeIdentifier : {
+				options : {
+					processIdentifier : function(id) {
+						// just use the files name without extension as identifier
+						return id.split('/').pop().replace('.html', '');
+					}
+				},
+				files : [ {
+					expand : true,
+					cwd : 'test/fixtures',
+					src : 'combineWithChangeIdentifier',
 					dest : 'tmp/combined',
 					filter : 'isDirectory'
 				} ]

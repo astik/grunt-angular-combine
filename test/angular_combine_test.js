@@ -44,5 +44,11 @@ exports.angularCombine = {
 		var expected = grunt.file.read('test/expected/test3.html');
 		test.equal(actual, expected, 'test3 files should be equals.');
 		test.done();
+	},
+	combineWithChangeIdentifier : function (test) {
+		var actual = grunt.file.read('tmp/combined/combineWithChangeIdentifier.html');
+		var expected = grunt.file.read('test/expected/combineWithChangeIdentifier.html');
+		test.equal(actual, expected, 'combineWithChangeIdentifier files should be equals.');
+		test.done();
 	}
 };
