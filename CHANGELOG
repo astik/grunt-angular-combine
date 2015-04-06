@@ -1,0 +1,34 @@
+v0.1.6:
+  date: 2014-01-24
+  changes:
+    - remove useless slash, thanks to @hugojosefson
+
+v0.1.5:
+  date: 2013-12-11
+  changes:
+    - grunt standard way to load files
+
+v0.1.4:
+  date: 2013-10-08
+  changes:
+    - change plugin name to stick with camel case convention
+
+v0.1.3:
+  date: 2013-10-08
+  changes:
+    - manage nested folder
+
+v0.1.2:
+  date: 2013-10-04
+  changes:
+    - fix only html files (filename ending with .html) should be processed
+
+v0.1.1:
+  date: 2013-10-04
+  changes:
+    - fix other-than-html file management
+
+v0.1.0:
+  date: 2013-10-04
+  changes:
+    - initial version
