@@ -56,5 +56,20 @@ exports.angularCombine = {
 		var expected = grunt.file.read('test/expected/combineWithoutComment.html');
 		test.equal(actual, expected, 'combineWithoutComment files should be equals.');
 		test.done();
+	},
+	cherryPick : function (test) {
+		// part 1
+		var actual = grunt.file.read('tmp/combined/cherryPick1.html');
+		var expected = grunt.file.read('test/expected/cherryPick1.html');
+		test.equal(actual, expected, 'cherryPick files (part1) should be equals.');
+		// part 2
+		actual = grunt.file.read('tmp/combined/cherryPick2.html');
+		expected = grunt.file.read('test/expected/cherryPick2.html');
+		test.equal(actual, expected, 'cherryPick files (part2) should be equals.');
+		// part 3
+		actual = grunt.file.read('tmp/combined/cherryPick3.html');
+		expected = grunt.file.read('test/expected/cherryPick3.html');
+		test.equal(actual, expected, 'cherryPick files (part3) should be equals.');
+		test.done();
 	}
 };

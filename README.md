@@ -27,9 +27,24 @@ grunt.loadNpmTasks('grunt-angular-combine');
 ## The "angularCombine" task
 
 ### Overview
+
 In your project's Gruntfile, add a section named `angularCombine` to the data object passed into `grunt.initConfig()`.
 
 ```js
+grunt.initConfig({
+  angularCombine: {
+    combine: {
+      files : [ {
+        cwd : 'app/modules',
+        src : [ 'module1/foo.html', 'module2/woot.html' ],
+        dest : 'tmp/combined/modules.html'
+      } ]
+    }
+  }
+})
+
+// or
+
 grunt.initConfig({
   angularCombine: {
     combine: {
@@ -159,7 +174,8 @@ grunt.initConfig({
 })
 ```
 
-You will get :
+By using the filter *isDirectory*, the plugin will process all HTML files found into each directory of you selection.
+So that, you will get :
 
 ```
 * tmp/combined

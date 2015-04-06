@@ -61,6 +61,21 @@ module.exports = function(grunt) {
 					dest : 'tmp/combined',
 					filter : 'isDirectory'
 				} ]
+			},
+			cherryPick : {
+				files : [ {
+					cwd : 'test/fixtures',
+					src : [ 'cherryPick/bar.html', 'cherryPick/woot.html' ],
+					dest : 'tmp/combined/cherryPick1.html'
+				}, {
+					cwd : 'test/fixtures',
+					src : 'cherryPick/foo.html',
+					dest : 'tmp/combined/cherryPick2.html'
+				}, {
+					cwd : 'test/fixtures',
+					src : [ 'cherryPick/*.html', '!cherryPick/foo.html' ],
+					dest : 'tmp/combined/cherryPick3.html'
+				} ]
 			}
 		},
 
