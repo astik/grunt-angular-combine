@@ -35,6 +35,11 @@
     "grunt-release": "0.12.0"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "angular",
+    "performance",
+    "template",
+    "combine",
+    "merge"
   ]
 }
