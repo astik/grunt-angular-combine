@@ -51,6 +51,9 @@ The default process doesn't need any option but which folder should be processed
 
 #### processIdentifier
 
+Type: function
+Default: function(id) { return id; }
+
 ```js
 grunt.initConfig({
   angularCombine : {
@@ -95,6 +98,32 @@ With the function defined into options (like the example above, you'll get :
 - module1-template1
 - module1-template2
 - module1-template3
+
+#### includeComments
+
+Type: boolean
+Default: true
+
+```js
+grunt.initConfig({
+  angularCombine : {
+    combineWithoutComment : {
+      options : {
+        includeComments : false
+      },
+      files : [ {
+        expand : true,
+        cwd : 'test/fixtures',
+        src : 'combineWithoutComment',
+        dest : 'tmp/combined',
+        filter : 'isDirectory'
+      } ]
+    }
+  }
+})
+
+This will remove the comment at the begining of the compiled files.
+This should be a problem as template would certainly be minified anyway later in the delivery process.
 
 
 ### Usage Examples

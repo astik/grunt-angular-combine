@@ -15,16 +15,26 @@ module.exports = function(grunt) {
 		var processIdentifierFunc = function(id) {
 			return id;
 		};
-		if (this.data.options) {
+		if (this.data.options && this.data.options.processIdentifier) {
 			processIdentifierFunc = this.data.options.processIdentifier;
 			if (processIdentifierFunc && typeof (processIdentifierFunc) !== 'function') {
 				throw new Error('angularCombine: processIdentifier must be a function.');
 			}
 		}
 
+		// define includeComments
+		var includeComments = true;
+		if (this.data.options && this.data.options.includeComments !== undefined) {
+			includeComments = !!this.data.options.includeComments;
+			console.log('includeComments is set to', includeComments);
+		}
+
 		var managePartialsDirectory = function(cwd, source, dest, a, b) {
 			var destFileContent = "";
-			destFileContent += "<!-- Merge of " + source + " -->\n";
+
+			if (includeComments) {
+				destFileContent += "<!-- Merge of " + source + " -->\n";
+			}
 
 			grunt.file.recurse(source, function(abspath, rootdir, subdir, filename) {
 				// only work with HTML files

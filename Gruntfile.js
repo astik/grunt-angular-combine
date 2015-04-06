@@ -49,6 +49,18 @@ module.exports = function(grunt) {
 					dest : 'tmp/combined',
 					filter : 'isDirectory'
 				} ]
+			},
+			combineWithoutComment : {
+				options : {
+					includeComments : false
+				},
+				files : [ {
+					expand : true,
+					cwd : 'test/fixtures',
+					src : 'combineWithoutComment',
+					dest : 'tmp/combined',
+					filter : 'isDirectory'
+				} ]
 			}
 		},
 
