@@ -40,35 +40,50 @@ grunt.initConfig({
 
 ### Options
 
-#### options.appBaseDir
-Type: `String`
-Default value: `''`
-
-A string value that is used to define the app directory.
-
-#### options.targetDir
-Type: `String`
-Default value: `''`
-
-A string value that is used to define where combined files should be created.
+No option.
+Just define which folder should be processed.
 
 ### Usage Examples
 
 #### Options
-In this example, all HTML files located into app/directives will be merged into a single file : target/directives.html. 
+
+Imagine a file structure like this :
+
+```
+* app/modules
+  * module1/
+    * module1-template1.html
+    * module1-template2.html
+    * module1-template3.html
+  * module2/
+    * module2-template1.html
+    * module2-template2.html
+```
+
+With this grunt config :
 
 ```js
 grunt.initConfig({
-  angularCombine: {
-    combine: {
-      options : {
-        appBaseDir : "app",
-        targetDir : "target"
-      },
-      folders : [ 'directives' ]
-    },
+  angularCombine : {
+    combine : {
+      files : [ {
+        expand : true,
+        cwd : 'app/modules',
+        src : '*',
+        dest : 'tmp/combined',
+        filter : 'isDirectory'
+      } ]
+    }
   },
 })
+```
+
+You will get :
+
+```
+* tmp/combined
+  * module1.html (containing the concatenation of module1-template1.html, module1-template2.html and module1-template3.html)
+  * module2.html (containing the concatenation of module2-template1.html and module2-template2.html)
 ```
 
 By defaults, it works in the current base directory.
