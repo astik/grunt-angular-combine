@@ -13,10 +13,26 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		jshint : {
-			all : [ 'Gruntfile.js', 'tasks/*.js', '<%= nodeunit.tests %>' ],
 			options : {
 				jshintrc : '.jshintrc'
+			},
+			all : [ 'Gruntfile.js', 'tasks/*.js', '<%= nodeunit.tests %>' ]
+		},
+
+		jscs: {
+			options: {
+				config: ".jscsrc"
+			},
+			all: {
+				src: [ 'tasks/*.js' ]
 			}
+		},
+
+		jsbeautifier: {
+			options: {
+				config: '.jsbeautifier'
+			},
+			all: [ 'tasks/*.js' ]
 		},
 
 		// Before generating any new files, remove any previously-created files.
@@ -95,16 +111,13 @@ module.exports = function(grunt) {
 	grunt.loadTasks('tasks');
 
 	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-nodeunit');
-	grunt.loadNpmTasks('grunt-release');
+	require('load-grunt-tasks')(grunt);
 
 	// Whenever the "test" task is run, first clean the "tmp" dir, then run this
 	// plugin's task(s), then test the result.
 	grunt.registerTask('test', [ 'clean', 'angularCombine', 'nodeunit' ]);
 
 	// By default, lint and run all tests.
-	grunt.registerTask('default', [ 'jshint', 'test' ]);
+	grunt.registerTask('default', [ 'jsbeautifier:all', 'jshint:all', 'jscs:all', 'test' ]);
 
 };

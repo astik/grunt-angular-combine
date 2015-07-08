@@ -27,12 +27,18 @@
   "scripts": {
     "test": "grunt test"
   },
+  "dependencies": {
+    "chalk": "~1.1.0"
+  },
   "devDependencies": {
     "grunt": "0.4.5",
     "grunt-contrib-clean": "0.6.0",
-    "grunt-contrib-jshint": "0.11.1",
+    "grunt-contrib-jshint": "0.11.2",
     "grunt-contrib-nodeunit": "0.4.1",
-    "grunt-release": "0.12.0"
+    "grunt-jsbeautifier": "0.2.10",
+    "grunt-jscs": "1.8.0",
+    "grunt-release": "0.13.0",
+    "load-grunt-tasks": "3.2.0"
   },
   "keywords": [
     "gruntplugin",
