@@ -9,6 +9,7 @@ You can use it to prepare templates for [angular-combine](https://github.com/ast
   
 
 ## Getting Started
+
 This plugin requires Grunt `~0.4.1`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
@@ -190,6 +191,10 @@ By defaults, it works in the current base directory.
 
 You'll find all contributors on this [contributors page](https://github.com/astik/grunt-angular-combine/graphs/contributors)
 
+### Other similar projects
+
+- [grunt-angular-combine](https://github.com/taylorcode/grunt-angular-combine)
+- [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache)
 
 ## Release History
 
