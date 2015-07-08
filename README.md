@@ -62,7 +62,7 @@ grunt.initConfig({
 
 ### Options
 
-The default process doesn't need any option but which folder should be processed.
+The default process doesn't need any option but which folder or wich files should be processed.
 
 #### processIdentifier
 

@@ -1,3 +1,8 @@
+v0.1.8:
+  date: 2015-07-08
+  changes:
+    - cleaner log
+
 v0.1.7:
   date: 2014-04-06
   changes:
